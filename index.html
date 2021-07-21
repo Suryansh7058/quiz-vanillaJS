@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wizz Quizzz</title>
+  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <div class="container">
+      <div class="quizTitle">
+        <p class="header"> Wizz Quizzz</p>
+      </div>
+      <div class="questionbox">
+        <p class="question" id="q"></p>
+      </div>
+      <div class="answer__block">
+          <button class='btn ans-btn1' id="btn1">&emsp;A.&emsp;&emsp;<span id="ans1"></span><span class = 'checkmark'>&#x2713;</span></button>
+          <button class='btn ans-btn2' id="btn2">&emsp;B.&emsp;&emsp;<span id="ans2"></span><span class = 'checkmark'>&#x2713;</span></button>
+          <button class='btn ans-btn3' id="btn3">&emsp;C.&emsp;&emsp;<span id="ans3"></span><span class = 'checkmark'>&#x2713;</span></button>
+          <button class='btn ans-btn4' id="btn4">&emsp;D.&emsp;&emsp;<span id="ans4"></span><span class = 'checkmark'>&#x2713;</span></button>
+      </div>
+      <div class="submission">
+        <button class="btn-clear" id="clear">Clear-Response</button>
+        <button class="btn-grad" id="submit">Submit</button>
+      </div>
+    </div>
+    <div class="result">
+      <span class="score">Score</span>
+      <p class=score-display><span class="correct" id="correct">0</span><span class="slash">/</span><span class="total" id="total">0</span></p>
+      <button class="btn-next" id="next">Next</button>
+    </div>
+  </div>
+</body>
+</html>
