@@ -350,11 +350,11 @@ body{
 }
 .correct{
     font-weight: 500;
-    color:yellowgreen;
+    color:#03c8a8;
     -webkit-text-stroke: 1px #000000;
 }
 .total{
     font-weight: 500;
-    color:#03c8a8;
+    color:yellowgreen;
     -webkit-text-stroke: 1px #000000;
 }
