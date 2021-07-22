@@ -334,7 +334,7 @@ body{
     position: fixed;
     display: grid;
     grid-template-rows: repeat(3,1fr);
-    top: 0;
+    top: 2%;
     left: 2.5%;
     bottom:5%;
     padding:20px;
