@@ -37,7 +37,7 @@ body{
     border-radius: 55px;
     padding-bottom: 50px;
     backdrop-filter: blur(15px);
-    box-shadow: 5px 5px 22px #000000;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.9);
 }
 
 /* * Quiz Title * */
@@ -148,16 +148,18 @@ body{
     text-align: left;
     left:1.5rem;
     border-radius:15rem;
-    box-shadow: 0.25em 0.25em 3.2em black;
+    box-shadow: 5px 15px 25px rgba(0,0,0,0.5);
     width: 110%;
     min-height: 5rem;
     background-color:transparent;
     backdrop-filter: blur(25px);
+    transition: box-shadow 300ms
 }
 .btn:hover,
 .btn:focus{
     color:white;
     background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+    box-shadow: 5px 15px 40px rgba(0,0,0,0.5);
 }
 .ans-btn1{
     top:0;
@@ -342,7 +344,7 @@ body{
     height:30rem;
     border-radius:20px;
     border:2px solid black;   
-    box-shadow: -10px 10px 22px #000000;
+    box-shadow: 10px 15px 10px rgba(0,0,0,0.25);
     backdrop-filter: blur(20px);
 }
 .score-display{
