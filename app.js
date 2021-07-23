@@ -128,7 +128,16 @@ btn4.addEventListener("click",()=>{
 });
 next.addEventListener("click",()=>{
     if(count===9){
-        window.location.reload();
+        Confirm.open({
+            title: "Reload Quiz",
+            message: "Click OK to confirm Reload",
+            okText: "OK",
+            cancelText:"Cancel",
+            onok: function(){
+                window.location.reload();
+            },
+            oncancel: ()=>console.log('You Pressed Cancel.')
+        });
     }
     count++;
     setQuizInstance();
@@ -138,3 +147,71 @@ clear.addEventListener("click",()=>{
     currentAnswer = "";
     submit.disabled=true;
 });
+
+
+const Confirm = {
+    open(options){
+        options = Object.assign({}, {
+            title: "",
+            message: "",
+            okText: "",
+            cancelText:"",
+            onok: function(){
+                window.location.reload();
+            },
+            oncancel: function(){}
+        },options);
+        
+
+        const html = `
+            <div class="confirm">
+            <div class="confirm-window">
+                <div class="black-top">${options.title}</div>
+                <div class="confirm-msg">${options.message}</div>
+                <div class="btn-box">
+                    <button class="btn-confirm" id="ok">${options.okText}</button>
+                    <button class="btn-cancel" id="cancel">${options.cancelText}</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const template = document.createElement('template');
+    template.innerHTML = html;
+
+    // Elements
+    const confirmElement = template.content.querySelector('.confirm');
+    const btnOk = template.content.getElementById("ok");
+    const btnCancel = template.content.getElementById("cancel");
+
+    confirmElement.addEventListener('click',e=>{
+        if(e.target===confirmElement){
+            options.oncancel();
+            this._close(confirmElement);
+            count--;
+        }
+    });
+
+    btnOk.addEventListener("click", ()=>{
+        this._close(confirmElement);
+        options.onok();
+    });
+
+    btnCancel.addEventListener('click', ()=>{
+        options.oncancel();
+        this._close(confirmElement);
+        count--;
+    });
+
+    document.body.appendChild(template.content);
+    },
+
+    _close(confirmElement){
+        confirmElement.classList.add('confirm-close');
+        
+        
+        confirmElement.addEventListener('animationend', ()=>{
+            document.body.removeChild(confirmElement);
+        });
+    }
+}
